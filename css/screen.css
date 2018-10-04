@@ -808,18 +808,76 @@ input::placeholder {
   transform: translateX(24px);
 }
 
-.c-toggle__input:hover {
+.c-toggle__label:hover .c-toggle__input {
   border: 1px solid var(--color-alpha-x-light);
 }
 
-.c-toggle__input:active {
+.c-toggle__checkbox-hidden:focus+.c-toggle__label .c-toggle__input, .c-toggle__checkbox-hidden:active+.c-toggle__label .c-toggle__input {
   border: 1px solid var(--color-alpha-x-light);
   box-shadow: var(--focus-shadow);
 }
 
-.c-toggle__input:focus {
+.c-toggle__input--alternative {
+  width: 40px;
+  height: 20px;
+  align-items: center;
+  background-color: var(--color-neutral-xxx-light);
+  border-color: white;
+}
+
+.c-toggle__input--alternative::after {
+  transform: translateX(-4px);
+  border: 1px solid white;
+}
+
+.c-toggle__checkbox-hidden:checked+.c-toggle__label .c-toggle__input--alternative {
+  background-color: #DCEAFF;
+  border-color: white;
+}
+
+.c-toggle__checkbox-hidden:checked+.c-toggle__label .c-toggle__input--alternative::after {
+  transform: translateX(20px);
+  background-color: var(--color-alpha);
+  border-color: var(--color-alpha-dark);
+}
+
+.c-toggle__label:hover .c-toggle__input--alternative {
+  border: 1px solid white;
+}
+
+.c-toggle__checkbox-hidden:focus+.c-toggle__label .c-toggle__input--alternative, .c-toggle__checkbox-hidden:active+.c-toggle__label .c-toggle__input--alternative {
+  border: 1px solid white;
+  box-shadow: none;
+}
+
+.c-toggle__label:hover .c-toggle__input--alternative::after {
+  border: 1px solid var(--color-alpha-x-light);
+}
+
+.c-toggle__checkbox-hidden:focus+.c-toggle__label .c-toggle__input--alternative::after, .c-toggle__checkbox-hidden:active+.c-toggle__label .c-toggle__input--alternative::after {
   border: 1px solid var(--color-alpha-x-light);
   box-shadow: var(--focus-shadow);
+}
+
+.c-toggle__label--inverted {
+  display: -webkit-flex;
+  /* Safari */
+  -webkit-flex-direction: row-reverse;
+  /* Safari 6.1+ */
+  display: flex;
+  flex-direction: row-reverse;
+  justify-content: space-between;
+}
+
+.c-toggle-list {}
+
+.c-toggle-list__item {
+  margin-bottom: 12px;
+}
+
+.c-toggle-list__item+.c-toggle-list__item {
+  padding-top: 12px;
+  border-top: 1px solid var(--color-neutral-xxx-light);
 }
 
 /*------------------------------------*\
@@ -827,7 +885,8 @@ input::placeholder {
 \*------------------------------------*/
 
 /*
-    Utilities: color
+    Utilities: -webkit-column-rule: ;
+    column-rule: ;
     ---
     Utility classes to put specific colors onto elements
 */
