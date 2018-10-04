@@ -880,6 +880,32 @@ input::placeholder {
   border-top: 1px solid var(--color-neutral-xxx-light);
 }
 
+/*
+  custom select
+*/
+
+.c-custom-select {
+  display: block;
+  position: relative;
+}
+
+.c-custom-select__input {
+  -webkit-appearance: none;
+  appearance: none;
+  width: 100%;
+  padding: 6px;
+}
+
+.c-custom-select__symbol {
+  width: 24px;
+  height: 24px;
+  position: absolute;
+  top: 4px;
+  right: 12px;
+  pointer-events: none;
+  fill: var(--color-neutral-x-light)
+}
+
 /*------------------------------------*\
 #UTILITIES
 \*------------------------------------*/
